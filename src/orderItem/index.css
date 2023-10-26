@@ -1,0 +1,149 @@
+.statusItem{
+    border: 0px;
+    padding: 15px;
+    padding: 8px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+
+}
+
+.approved{
+    background-color: #1bbf5d;    
+    width: 80px;
+}
+
+.missing{
+    background-color: #ff7f17;
+    width: 80px;   
+}
+
+.urgent{
+    background-color: red;
+    width: 120px;
+    
+}
+
+.tick{
+    color: #1bbf5d;
+}
+
+.modalClose{
+    align-self: flex-start;
+    font-size: 25px;
+}
+
+.green{
+    color: #1bbf5d;
+    font-size: 20px;
+}
+
+.orange{
+    color: #ff7f17;
+    font-size: 20px;
+}
+
+.red{
+    color: red;
+    font-size: 20px;
+}
+
+.editContainer{
+    display: flex;
+}
+
+.editAvocado{
+    width: 200px;
+}
+
+.editItem{
+    display: flex;
+    align-items: center;
+    width: 200px;
+}
+
+.editItemBorder{
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    width: 80px;
+}
+
+.editItemContainer{
+    display: flex;
+    align-items: center;
+}
+
+.editItemheading{
+    width: 200px;
+}
+
+.changeQuantity{
+    display: flex;
+    align-items: center;
+}
+
+.changeNumber{
+    color: #1bbf5d;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.quantityChange{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.minus{
+    font-size: 24px;
+}
+
+span{
+    font-size: 13px;
+    color: gray;
+    font-weight: normal;
+}
+
+ul{
+    display: flex;
+}
+
+li{
+    list-style-type: none;
+}
+
+.reason{
+    border: 1px solid #cfcfcf;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 13px;
+    margin-right: 10px;
+
+}
+
+.missingReason{
+    width: 120px;
+}
+
+.quantityReason{
+    width: 180px;
+}
+
+.content{
+    padding: 20px;
+    
+}
+
+.popup-content{
+    border-radius: 10px;
+}
+
+.popupSend{
+    display: flex;
+    justify-content: flex-end;
+}
+
+td,th{
+    width: 300px;
+}
