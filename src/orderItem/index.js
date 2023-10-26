@@ -109,7 +109,8 @@ const OrderItem = (props) => {
                                         <div>
                                         <div className='editItem'>
                                             <p className='editItemheading'>Price</p>
-                                            <p className='editItemBorder'>Rs {price}</p>                                        </div>
+                                            <p className='editItemBorder'>Rs {price}</p>                                        
+                                        </div>
                                         <div className='editItem'>
                                             <p className='editItemheading'>Quantity</p>
                                             <div className='changeQuantity'>
