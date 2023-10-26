@@ -49,6 +49,13 @@
 .navItems{
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.cart{
+  font-size: 23px;
+  cursor: pointer;
 }
 
 .navItem{
@@ -76,13 +83,18 @@ span{
   justify-content: space-between;
   padding-top: 10px;
   padding-bottom: 10px;
-  box-shadow: 0px 2px 8px 0px #c0c2c4;
   padding-left: 100px;
   padding-right: 100px;
+  box-shadow: 5px 2px 8px 0px #737475;
 }
 
 .approveOrderContainer{
   margin-top: auto;
+}
+
+.orders{
+  display: flex;
+  align-items: center;
 }
 
 .backButton{
@@ -226,6 +238,7 @@ th{
 .avocado{
   height: 50px;
   width: 50px;
+  margin-right: 10px;
 }
 
 button{

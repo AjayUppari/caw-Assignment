@@ -11,31 +11,56 @@ class App extends Component{
   state = {
     ordersList: [
       {
-       quantity: 0,
+       imageUrl:'https://res.cloudinary.com/dymdlu50w/image/upload/v1698334239/chicken_biryani_qdh2af.avif',
+       productName: 'Chicken Biryani',
+       brand: 'Mehfil',
+       price: 300,
+       quantity: 2,
        status: 'NONE',
-       id:1
+       id:1,
+       isApproved: ''
      },
     {
-       quantity: 15,
+       imageUrl: 'https://res.cloudinary.com/dymdlu50w/image/upload/v1698334157/fish_fry_xkynrv.jpg',
+       productName: 'Fish fry',
+       brand: 'Salmon',
+       price: 400,
+       quantity: 1,
        status: 'NONE',
-       id:2
+       id:2,
+       isApproved: ''
      },
+     {
+      imageUrl: 'https://res.cloudinary.com/dymdlu50w/image/upload/v1698241015/Avocado_Hass_cvnqmd.jpg',
+      productName: 'Avocado',
+      brand: 'Fresh Mart',
+      price: 150,
+      quantity: 5,
+      status: 'NONE',
+      id:3,
+      isApproved: ''
+    },
     {
-       quantity: 15,
-       status: 'NONE',
-       id:3
-     },
+      imageUrl: 'https://res.cloudinary.com/dymdlu50w/image/upload/v1698334769/Paneer-butter-masala-recipe-3-500x500_mxswyw.jpg',
+      productName: 'Paneer Butter Masala',
+      brand: 'Fresh Mart',
+      price: 280,
+      quantity: 1,
+      status: 'NONE',
+      id:4,
+      isApproved: ''
+    },
     {
-       quantity: 0,
-       status: 'NONE',
-       id:4
-     },
-    {
-       quantity: 13,
-       status: 'NONE',
-       id:5
-     },
-   ]
+      imageUrl: 'https://res.cloudinary.com/dymdlu50w/image/upload/v1698335127/manchuria_vy6qwg.jpg',
+      productName: 'Manchuria',
+      brand: 'Haldirams',
+      price: 130,
+      quantity: 3,
+      status: 'NONE',
+      id:5,
+      isApproved: ''
+    }
+   ],
   }
 
   onClickApproveOrder = (orderItemId) => {
@@ -45,7 +70,8 @@ class App extends Component{
       if(eachItem.id === orderItemId){
         return({
           ...eachItem,
-          status: 'APPROVED'
+          status: 'APPROVED',
+          isApproved: true
         })
       }
       else{
@@ -101,7 +127,6 @@ class App extends Component{
 
   render(){
     const { ordersList } = this.state
-    console.log(ordersList)
 
     return(
       <div className='appContainer'>
@@ -113,17 +138,19 @@ class App extends Component{
           <p className='navItem'>Analytics</p>
           </div>
           <div className='navItems'>
-            <BsCart3 ></BsCart3>
+            <BsCart3  className='cart' />
             <p>Hello,James</p>
           </div>
         </nav>
         <div className='orderContainer'>
           <div className='orderDetails'>
           <div>
+          <div className='orders'>
           <span>Orders</span>
           <AiOutlineRight />
           <span>Order 32457ABC</span>
-          <h1>Order32457ABC</h1>
+          </div>
+          <h1>Order 32457ABC</h1>
           </div>
           
           </div>

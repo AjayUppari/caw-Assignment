@@ -5,7 +5,6 @@
     border-radius: 20px;
     text-align: center;
     color: white;
-
 }
 
 .approved{
@@ -21,16 +20,17 @@
 .urgent{
     background-color: red;
     width: 120px;
-    
 }
 
-.tick{
-    color: #1bbf5d;
+.statusButton{
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .modalClose{
     align-self: flex-start;
     font-size: 25px;
+    cursor: pointer;
 }
 
 .green{
@@ -59,7 +59,7 @@
 .editItem{
     display: flex;
     align-items: center;
-    width: 200px;
+    margin-left: 20px;
 }
 
 .editItemBorder{
@@ -68,6 +68,8 @@
     padding: 5px;
     text-align: center;
     width: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .editItemContainer{
@@ -104,9 +106,13 @@ span{
     color: gray;
     font-weight: normal;
 }
+h3{
+    margin: 0px;
+}
 
 ul{
     display: flex;
+    padding: 0px;
 }
 
 li{
@@ -132,7 +138,16 @@ li{
 
 .content{
     padding: 20px;
-    
+}
+
+.yesOrNo{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 15px;
+    color: white;
+    padding: 10px;
+    width: 65px;
+    border-radius: 25px;
 }
 
 .popup-content{
@@ -146,4 +161,21 @@ li{
 
 td,th{
     width: 300px;
+    text-align: center;
+}
+
+.missingHeading{
+    margin: 0px;
+}
+
+.urgentHeading{
+    font-size: 20px;
+}
+
+.orangeNo{
+    background-color: #ff7f17;
+}
+
+.redYes{
+    background-color: red;
 }

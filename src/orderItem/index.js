@@ -34,56 +34,54 @@ const OrderItem = (props) => {
         }
     }
 
-    const getButtonsClassName = (status) => {
+    const getStatusClassName = (status) => {
         switch(status){
-            case 'APPROVED':
-                return 'green'
             case 'MISSING':
                 return 'orange'
             case 'URGENT_AND_MISSING':
                 return 'red'
             default:
-                return null;
+                return 'none'
         }
     }
 
     const { orderDetails, approveOrder, urgentOrder, missingOrder } = props
-    const { id, quantity, status } = orderDetails
+    const { id, quantity, status, brand, imageUrl, price, productName } = orderDetails
 
     return(
         <>
             <tr key={`key ${id}`}>
                 <td className='productName'>
-                  <img className='avocado' src='https://res.cloudinary.com/dymdlu50w/image/upload/v1698241015/Avocado_Hass_cvnqmd.jpg' alt='avocado' />
-                  <p>Chicken Breast fillets, Boneless marinated, 6 Ounce Raw</p>
+                  <img className='avocado' src={imageUrl} alt='avocado' />
+                  <p>{productName}</p>
                 </td>
                 <td>
-                    Hormel Black Labelmany
+                    {brand}
                 </td>
-                <td>$60.67 / 6+LB</td>
-                <td>{`${quantity} x 6 * 1LB`}</td>
-                <td>{`$${quantity * 600}`}</td>
+                <td>{`Rs ${price}`}</td>
+                <td>{quantity}</td>
+                <td>Rs { `${price}` * `${quantity}`}</td>
                 <td className='status'>
                     {
                         renderOrderStatus(status)
                     }
-                    <button  onClick={onClickApproveOrder} type='button'><MdDone className='statusButton' /></button>
+                    <button className={`${status}` === 'APPROVED' && 'green'}  onClick={onClickApproveOrder} type='button'><MdDone className='statusButton' /></button>
                     <div>
                       <Popup trigger=
-                      {<button className={getButtonsClassName(status)} type='button'><RxCross2 className='statusButton' /></button>} 
+                      {<button className={getStatusClassName(status)} type='button'><RxCross2 className='statusButton' /></button>} 
                       modal nested>
                       {
                           close => (
                               <div className='modal'>
                                   <div className='content'>
                                       <div className='closeContainer'>
-                                      <h1>Missing product</h1>
-                                      <RxCross2 onClick={() => close()} />
+                                      <h1 className='missingHeading'>Missing product</h1>
+                                      <RxCross2 className='modalClose' onClick={() => close()} />
                                       </div>
-                                      <p>Is chicken breast fillets boneless... urgent?</p>
+                                      <p className='urgentHeading'>Is {productName} urgent?</p>
                                       <div className='buttonsContainer'>
-                                        <button onClick={onClickUrgent} type='button'>Yes</button>
-                                        <button onClick={onClickMissing} type='button'>No</button>
+                                        <button className='redYes yesOrNo' onClick={onClickUrgent} type='button'>Yes</button>
+                                        <button className='yesOrNo orangeNo' onClick={onClickMissing} type='button'>No</button>
                                       </div>
                                   </div>
                                   <div>
@@ -102,30 +100,27 @@ const OrderItem = (props) => {
                               <div className='modal'>
                                   <div className='content'>
                                       <div className='closeContainer'>
-                                      <h3>Chicken Breast Fillets, Boneless 6 Ounce Raw, Invivid...</h3>
+                                      <h3>{productName}</h3>
                                       <RxCross2 className='modalClose' onClick={() => close()} />
                                       </div>
-                                      <p>American Roland</p>
+                                      <p>{brand}</p>
                                       <div className='editContainer'>
-                                        <img className='editAvocado' src='https://res.cloudinary.com/dymdlu50w/image/upload/v1698241015/Avocado_Hass_cvnqmd.jpg' alt='avocado' />
+                                        <img className='editAvocado' src={imageUrl} alt={productName} />
                                         <div>
                                         <div className='editItem'>
-                                            <p className='editItemheading'>Price ($)</p>
-                                            <p className='editItemBorder'>9999.99</p>
-                                            <p>/6*1LB</p>
-                                        </div>
+                                            <p className='editItemheading'>Price</p>
+                                            <p className='editItemBorder'>Rs {price}</p>                                        </div>
                                         <div className='editItem'>
                                             <p className='editItemheading'>Quantity</p>
                                             <div className='changeQuantity'>
                                                 <AiFillMinusCircle className='changeNumber minus' />
-                                                <p className='editItemBorder'>9998</p>
+                                                <p className='editItemBorder'>{quantity}</p>
                                                 <BsFillPlusCircleFill className='changeNumber' />
                                             </div>
-                                            <p>x6*1LB</p>
                                         </div>
                                         <div className='editItem'>
                                             <p className='editItemheading'>Total</p>
-                                            <p>$9,997,000.02</p>
+                                            <p>Rs { `${price}` * `${quantity}`}</p>
                                         </div>
                                         </div>
                                       </div>
@@ -147,7 +142,7 @@ const OrderItem = (props) => {
                                             </ul>
                                       </div>
                                       <div className='popupSend'>
-                                        <button onClick={() => close()} className='cancel' type='button'>Cancel</button>
+                                        <button onClick={() => close()} className='backButton' type='button'>Cancel</button>
                                         <button className='approveOrderButton' type='button'>Send</button>
                                       </div>
                                   </div>
