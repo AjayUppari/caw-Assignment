@@ -11,7 +11,7 @@ class App extends Component{
   state = {
     ordersList: [
       {
-       imageUrl:'https://res.cloudinary.com/dymdlu50w/image/upload/v1698334239/chicken_biryani_qdh2af.avif',
+       imageUrl:'https://res.cloudinary.com/dymdlu50w/image/upload/v1698383484/Chicken-Biryani_a47iog.jpg',
        productName: 'Chicken Biryani',
        brand: 'Mehfil',
        price: 300,

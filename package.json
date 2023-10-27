@@ -1,4 +1,5 @@
 {
+  "homepage": "https://AjayUppari.github.io/CAWAssignment",
   "name": "caw-assignment",
   "version": "0.1.0",
   "private": true,
@@ -14,10 +15,13 @@
     "react-icons": "^4.11.0",
     "react-scripts": "5.0.1",
     "reactjs-popup": "^2.0.6",
+    "rm": "^0.1.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm rum build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -39,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }
