@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/caw-Assignment/static/css/main.86192a7b.css",
+    "main.js": "/caw-Assignment/static/js/main.86198d29.js",
+    "static/js/787.06e624e5.chunk.js": "/caw-Assignment/static/js/787.06e624e5.chunk.js",
+    "index.html": "/caw-Assignment/index.html",
+    "main.86192a7b.css.map": "/caw-Assignment/static/css/main.86192a7b.css.map",
+    "main.86198d29.js.map": "/caw-Assignment/static/js/main.86198d29.js.map",
+    "787.06e624e5.chunk.js.map": "/caw-Assignment/static/js/787.06e624e5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.86192a7b.css",
+    "static/js/main.86198d29.js"
+  ]
+}
